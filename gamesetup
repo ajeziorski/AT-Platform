@@ -1,0 +1,43 @@
+Game Platform Intsallation Manual
+
+1) required python libraries:
+
+wx2.8, pymouse
+
+2) required ubuntu packages:
+
+xautomation
+libxss-dev
+xbindkeys
+
+3) configuring xbindkeys
+
+Enter the following command in the terminal:
+
+xbindkeys --defaults > $HOME/.xbindkeysrc
+
+A hidden configuration file called '.xbindkeysrc' will appear in your HOME directory.
+
+Add the following two lines to the file.
+
+"xte 'keydown space'"
+  b:1
+
+"xte 'keyup space'"
+  b:1 + release
+
+Finally add a 'killall xbindkeys' command to your startup applications.
+
+4) compiling idle.c
+
+Call the terminal command:
+
+gcc -o idle idle.c -lXss
+
+in the idle.c directory.
+
+
+Sources: 
+
+http://coderrr.wordpress.com/2008/04/20/getting-idle-time-in-unix/
+http://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/
